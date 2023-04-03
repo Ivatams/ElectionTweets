@@ -1,0 +1,26 @@
+name: Download Tweets
+
+on:
+  schedule:
+    - cron: '0 */3 * * *' # Run every 3 hours
+
+jobs:
+  download-tweets:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up R
+      uses: r-lib/actions/setup-r@v1
+      with:
+        r-version: '4.0.5'
+
+    - name: Install dependencies
+      run: |
+        install.packages(c("rtweet", "tidyverse","twitteR", "rtweet","httr","NLP","tm","stringr","SnowballC",
+        "RColorBrewer","wordcloud","RWeka","syuzhet","topicmodels","tidytext","slam","rJava","jsonlite","httr",
+        "httpuv"))
+    
+    - name: Download tweets
+      run: Rscript TweetFetch.R
