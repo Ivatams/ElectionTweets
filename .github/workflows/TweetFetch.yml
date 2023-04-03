@@ -1,4 +1,4 @@
-name: Download Tweets
+name: TweetFetch
 
 on:
   schedule:
@@ -22,5 +22,5 @@ jobs:
         "RColorBrewer","wordcloud","RWeka","syuzhet","topicmodels","tidytext","slam","rJava","jsonlite","httr",
         "httpuv"))
     
-    - name: Download tweets
-      run: Rscript TweetFetch.R
+    - name: TweetFetch
+      run: TweetFetch.R
