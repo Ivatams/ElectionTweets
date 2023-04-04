@@ -18,7 +18,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-       install.packages(c("rtweet", "tidyverse", "twitteR", "rtweet", "httr", "NLP", "tm", "stringr", "SnowballC", "RColorBrewer", "wordcloud", "RWeka", "syuzhet", "topicmodels", "tidytext", "slam", "rJava", "jsonlite", "httr", "httpuv"))
+       Rscript -e 'install.packages(c("rtweet", "tidyverse", "twitteR", "rtweet", "httr", "NLP", "tm", "stringr", "SnowballC", "RColorBrewer", "wordcloud", "RWeka", "syuzhet", "topicmodels", "tidytext", "slam", "rJava", "jsonlite", "httr", "httpuv"))'
 
     
     - name: TweetFetch
